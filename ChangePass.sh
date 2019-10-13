@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#
 ####################################################################################################
 #
 # Description
@@ -18,12 +18,35 @@
 #
 ####################################################################################################
 #
-#   Checking and Setting Variables
+#   DEFINE VARIABLES & READ IN PARAMETERS
 #
 ####################################################################################################
 #
 ScriptName="ZZ 21 - Management - Local Account Password Change"
 #
+####################################################################################################
+#
+#   Checking and Setting Variables Complete
+#
+####################################################################################################
+
+###############################################################################################################################################
+# 
+# SCRIPT CONTENTS - DO NOT MODIFY BELOW THIS LINE
+#
+###############################################################################################################################################
+#
+# Defining Functions
+#
+###############################################################################################################################################
+#
+# Section End Function
+#
+VarCheck(){
+#
+
+
+
 # Outputs a blank line for reporting purposes
 echo
 #
@@ -122,11 +145,55 @@ PASSWORDCHECK=$(/usr/bin/dscl /Local/Default -authonly $setUsername $setPassword
 # Check that the required variables are set
 echo Required Variables appear to be set
 #
-####################################################################################################
+
+
 #
-#   Checking and Setting Variables Complete
+}
 #
-####################################################################################################
+###############################################################################################################################################
+#
+# Section End Function
+#
+SectionEnd(){
+#
+# Outputting a Blank Line for Reporting Purposes
+/bin/echo
+#
+# Outputting a Dotted Line for Reporting Purposes
+/bin/echo  -----------------------------------------------
+#
+# Outputting a Blank Line for Reporting Purposes
+/bin/echo
+#
+}
+#
+###############################################################################################################################################
+#
+# Script End Function
+#
+ScriptEnd(){
+#
+# Outputting a Blank Line for Reporting Purposes
+#/bin/echo
+#
+/bin/echo Ending Script '"'$ScriptName'"'
+#
+# Outputting a Blank Line for Reporting Purposes
+/bin/echo
+#
+# Outputting a Dotted Line for Reporting Purposes
+/bin/echo  -----------------------------------------------
+#
+# Outputting a Blank Line for Reporting Purposes
+/bin/echo
+#
+}
+#
+###############################################################################################################################################
+#
+# End Of Function Definition
+#
+###############################################################################################################################################
 # 
 # Begin Processing
 #
@@ -135,6 +202,16 @@ echo Required Variables appear to be set
 # Outputting a Blank Line for Reporting Purposes
 echo
 #
+
+
+
+VarCheck
+
+
+
+
+
+
 echo Checking if Password needs changing
 #
 # Outputting a Blank Line for Reporting Purposes
