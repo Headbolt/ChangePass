@@ -47,7 +47,7 @@ setMANusername=$6
 # Grab the password for the admin user we will use to change the password from JAMF variable #7 eg. password
 setMANpassword=$7
 # Set the name of the script for later logging
-ScriptName="ZZ 21 - Management - Local Account Password Change"
+ScriptName="append prefix here as needed - Local Account Password Change"
 #
 ####################################################################################################
 #
