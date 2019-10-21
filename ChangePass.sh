@@ -46,6 +46,15 @@ setPassword=$5
 setMANusername=$6
 # Grab the password for the admin user we will use to change the password from JAMF variable #7 eg. password
 setMANpassword=$7
+#
+# Set the Trigger Name of your Policy to set the JAMF Management Account to a Known Password incase
+# it is used for the Admin User from Variable #8 eg. JAMF-NonComplex
+NonCOMP="JAMF-NonComplex"
+#
+# Set the Trigger Name of your Policy to set the JAMF Management Account to an unknown complex Password incase
+# it is used for the Admin User from Variable #9 eg. JAMF-Complex
+COMP="JAMF-Complex"
+#
 # Set the name of the script for later logging
 ScriptName="append prefix here as needed - Local Account Password Change"
 #
@@ -188,7 +197,7 @@ if [[ "${ver[1]}" -ge 13 ]]
 				/bin/echo Triggering Policy to set JAMF account to a known non-complex Password
 				# Outputs a blank line for reporting purposes
 				/bin/echo
-				/usr/local/bin/jamf policy -trigger JAMF-NonComplex
+				/usr/local/bin/jamf policy -trigger $NonCOMP
 				# 
                 SectionEnd
 				#
@@ -211,7 +220,7 @@ if [[ "${ver[1]}" -ge 13 ]]
    				# Outputs a blank line for reporting purposes
 				/bin/echo
 				#               
-                /usr/local/bin/jamf policy -trigger JAMF-Complex
+                /usr/local/bin/jamf policy -trigger $COMP
 				#
 		fi
 		#
